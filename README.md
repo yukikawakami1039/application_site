@@ -16,7 +16,7 @@
 
 ### 2. サイトのビルド
 
-以下のコマンドを実行すると、`public/` ディレクトリに静的なHTMLファイルが生成されます。
+以下のコマンドを実行すると、`docs/` ディレクトリに静的なHTMLファイルが生成されます。
 
 ```bash
 npm run build
@@ -24,9 +24,9 @@ npm run build
 
 ### 3. サイトの確認
 
-`public/` ディレクトリの中身をWebサーバー（例: Live Server, Nginx, Apacheなど）でホスティングすることで、生成されたサイトをブラウザで確認できます。
+`docs/` ディレクトリの中身をWebサーバー（例: Live Server, Nginx, Apacheなど）でホスティングすることで、生成されたサイトをブラウザで確認できます。
 
-GitHub Pagesで公開する場合は、`public/` ディレクトリの中身をGitHubリポジトリにプッシュし、GitHub Pagesの設定を行ってください。
+GitHub Pagesで公開する場合は、`docs/` ディレクトリの中身をGitHubリポジトリにプッシュし、GitHub Pagesの設定を行ってください。
 
 ## 開発
 
