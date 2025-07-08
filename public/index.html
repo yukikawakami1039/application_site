@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>記事一覧 - 攻略サイト</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="site-logo">Game攻略</a>
+          <nav class="main-nav">
+            <div class="nav-item">
+              <a href="#" class="nav-link active">ホーム</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">攻略</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">ニュース</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">レビュー</a>
+            </div>
+          </nav>
+          <div class="search-box">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="記事を検索..."
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">最新ゲーム攻略情報</h1>
+          <p class="hero-subtitle">
+            毎日更新される攻略記事で、あなたのゲーマーライフをサポート
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">1,200+</span>
+              <span class="stat-label">攻略記事</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">対応ゲーム</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10,000+</span>
+              <span class="stat-label">月間ユーザー</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- 記事一覧 -->
+          <div class="articles-section">
+            <section class="section">
+              <div class="section-header">
+                <h2 class="section-title">最新記事</h2>
+                <a href="#" class="section-link">すべて見る →</a>
+              </div>
+              <div class="article-grid">
+                <article class="article-card">
+                  <a
+                    href="articles/test.html"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <div class="card-thumbnail">
+                      <img
+                        src="https://via.placeholder.com/400x225"
+                        alt="記事のサムネイル"
+                        class="card-image"
+                      />
+                      <span class="card-badge new">NEW</span>
+                    </div>
+                    <div class="card-content">
+                      <h3 class="card-title">未来都市「アストレア」の秘密</h3>
+                      <p class="card-excerpt">
+                        西暦2157年に建設された最初の浮遊都市「アストレア」の謎に迫る。隠されたイースターエッグから...
+                      </p>
+                      <div class="card-meta">
+                        <div class="card-date">📅 2025/07/08</div>
+                        <div class="card-views">👁 2,350</div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="article-card">
+                  <a
+                    href="articles/test1.html"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <div class="card-thumbnail">
+                      <img
+                        src="https://via.placeholder.com/400x225"
+                        alt="記事のサムネイル"
+                        class="card-image"
+                      />
+                      <span class="card-badge featured">特集</span>
+                    </div>
+                    <div class="card-content">
+                      <h3 class="card-title">テストタイトル</h3>
+                      <p class="card-excerpt">
+                        初心者でも分かりやすい攻略のポイントを詳しく解説。基本的な操作方法から上級テクニックまで...
+                      </p>
+                      <div class="card-meta">
+                        <div class="card-date">📅 2025/07/07</div>
+                        <div class="card-views">👁 1,890</div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="article-card">
+                  <a
+                    href="articles/test2.html"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <div class="card-thumbnail">
+                      <img
+                        src="https://via.placeholder.com/400x225"
+                        alt="記事のサムネイル"
+                        class="card-image"
+                      />
+                      <span class="card-badge">攻略</span>
+                    </div>
+                    <div class="card-content">
+                      <h3 class="card-title">テストタイトル2</h3>
+                      <p class="card-excerpt">
+                        入手困難なレアアイテムを効率よく集める方法を紹介。確率アップのタイミングや隠し要素も...
+                      </p>
+                      <div class="card-meta">
+                        <div class="card-date">📅 2025/07/06</div>
+                        <div class="card-views">👁 3,120</div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </section>
+          </div>
+
+          <!-- サイドバー -->
+          <aside class="sidebar">
+            <!-- 人気記事ランキング -->
+            <div class="sidebar-widget">
+              <div class="widget-header">
+                <h3 class="widget-title">人気記事ランキング</h3>
+              </div>
+              <div class="widget-content">
+                <ul class="popular-list">
+                  <li class="popular-item">
+                    <div class="popular-rank gold">1</div>
+                    <div class="popular-content">
+                      <a href="articles/test.html" class="popular-title"
+                        >未来都市「アストレア」の秘密</a
+                      >
+                      <div class="popular-meta">👁 5,240 | 📅 2025/07/08</div>
+                    </div>
+                  </li>
+                  <li class="popular-item">
+                    <div class="popular-rank silver">2</div>
+                    <div class="popular-content">
+                      <a href="articles/test1.html" class="popular-title"
+                        >テストタイトル</a
+                      >
+                      <div class="popular-meta">👁 4,180 | 📅 2025/07/07</div>
+                    </div>
+                  </li>
+                  <li class="popular-item">
+                    <div class="popular-rank bronze">3</div>
+                    <div class="popular-content">
+                      <a href="articles/test2.html" class="popular-title"
+                        >テストタイトル2</a
+                      >
+                      <div class="popular-meta">👁 3,890 | 📅 2025/07/06</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- カテゴリー -->
+            <div class="sidebar-widget">
+              <div class="widget-header">
+                <h3 class="widget-title">カテゴリー</h3>
+              </div>
+              <div class="widget-content">
+                <div class="category-list">
+                  <a href="#" class="category-item">
+                    <span class="category-name">攻略</span>
+                    <span class="category-count">156</span>
+                  </a>
+                  <a href="#" class="category-item">
+                    <span class="category-name">ニュース</span>
+                    <span class="category-count">89</span>
+                  </a>
+                  <a href="#" class="category-item">
+                    <span class="category-name">レビュー</span>
+                    <span class="category-count">64</span>
+                  </a>
+                  <a href="#" class="category-item">
+                    <span class="category-name">初心者</span>
+                    <span class="category-count">78</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- タグクラウド -->
+            <div class="sidebar-widget">
+              <div class="widget-header">
+                <h3 class="widget-title">人気タグ</h3>
+              </div>
+              <div class="widget-content">
+                <div class="tag-cloud">
+                  <a href="#" class="tag">RPG</a>
+                  <a href="#" class="tag">アクション</a>
+                  <a href="#" class="tag">シミュレーション</a>
+                  <a href="#" class="tag">パズル</a>
+                  <a href="#" class="tag">レベル上げ</a>
+                  <a href="#" class="tag">ボス攻略</a>
+                  <a href="#" class="tag">装備</a>
+                  <a href="#" class="tag">スキル</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>サイトについて</h3>
+            <ul class="footer-links">
+              <li><a href="#">運営方針</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>コンテンツ</h3>
+            <ul class="footer-links">
+              <li><a href="#">最新記事</a></li>
+              <li><a href="#">人気記事</a></li>
+              <li><a href="#">攻略ガイド</a></li>
+              <li><a href="#">ゲームレビュー</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Game攻略サイト. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
