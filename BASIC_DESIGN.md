@@ -1,4 +1,6 @@
-    ### 基本設計書：静的サイトジェネレーター
+### 基本設計書：静的サイトジェネレーター
+
+> **NOTE (2025-07-13):** 出力先を `public/` から `docs/` に統一しました。GitHub Pages は `docs/` を公開対象に設定してください。
 
     #### 1. 設計概要
     本システムは、Node.js製のビルドスクリプトであり、要件定義書で定められた通り、マークダウンファイル群から静的なHTMLサイトを生成する。
@@ -13,7 +15,7 @@
     ├── node_modules/       # npmでインストールされたライブラリ
     ├── articles/           # ユーザーが記事のマークダウンファイルを追加する場所
     │   └── sample.md
-    ├── public/             # 生成された静的サイトが格納される場所（この中身をデプロイ）
+    ├── docs/               # 生成された静的サイトが格納される場所（この中身をデプロイ）
     │   ├── index.html
     │   └── articles/
     │       └── sample.html
@@ -35,7 +37,7 @@
         *   `getArticleFiles()`: `articles`ディレクトリから、すべての`.md`ファイルのパス一覧を取得する。
         *   `readArticleFile(filePath)`: 指定されたパスのマークダウンファイルを読み込み、その内容（文字列）とファイル名（拡張子なし）をオブジェクトとして返す。
         *   `writeHtmlFile(outputPath, content)`: 指定されたパスにHTMLコンテンツを書き出す。
-        *   `createOutputDirs()`: `public`および`public/articles`ディレクトリが存在しない場合に作成する。
+        *   `createOutputDirs()`: `docs`および`docs/articles`ディレクトリが存在しない場合に作成する。
 
     **3.2. `main.js`**
     *   **責務:** `file-utils.js`の関数を呼び出し、サイト全体のビルド処理を実行する。
@@ -46,9 +48,9 @@
             a. `readArticleFile()`で記事の内容とファイル名を取得する。
             b. 取得したマークダウン内容を`marked`ライブラリでHTMLに変換する。
             c. 変換したHTMLをテンプレートに埋め込み、記事詳細ページの完全なHTMLを生成する。
-            d. `writeHtmlFile()`で`public/articles/`以下にHTMLファイルとして保存する。
+            d. `writeHtmlFile()`で`docs/articles/`以下にHTMLファイルとして保存する。
         4.  すべての記事のファイル名（＝HTMLへのリンク）をリスト化し、トップページ（`index.html`）のHTMLを生成する。
-        5.  `writeHtmlFile()`で`public/index.html`を保存する。
+        5.  `writeHtmlFile()`で`docs/index.html`を保存する。
 
     #### 4. HTMLテンプレート設計
     *   **記事詳細ページ (`article.html`のテンプレート):**

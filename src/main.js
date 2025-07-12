@@ -1,24 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 const marked = require("marked");
-const { getArticleFiles, readArticleFile } = require("./file-utils");
-
-function createOutputDirs() {
-  const publicDir = path.join(process.cwd(), "public");
-  const publicArticlesDir = path.join(publicDir, "articles");
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-  }
-  if (!fs.existsSync(publicArticlesDir)) {
-    fs.mkdirSync(publicArticlesDir, { recursive: true });
-  }
-}
+const {
+  OUTPUT_ROOT,
+  createOutputDirs,
+  cleanBuild,
+  getArticleFiles,
+  readArticleFile,
+} = require("./file-utils");
 
 function writeHtmlFile(outputPath, content) {
   fs.writeFileSync(outputPath, content, "utf8");
 }
 
 function build() {
+  cleanBuild();
   createOutputDirs();
 
   const articleFiles = getArticleFiles();
@@ -30,7 +26,7 @@ function build() {
     const fileName = path.basename(filePath, ".md");
     const outputPath = path.join(
       process.cwd(),
-      "public",
+      OUTPUT_ROOT,
       "articles",
       `${fileName}.html`
     );
@@ -68,7 +64,7 @@ function build() {
 </body>
 </html>`;
 
-  writeHtmlFile(path.join(process.cwd(), "public", "index.html"), indexHtml);
+  writeHtmlFile(path.join(process.cwd(), OUTPUT_ROOT, "index.html"), indexHtml);
 }
 
 module.exports = {

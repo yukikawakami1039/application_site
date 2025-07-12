@@ -1,1 +1,1 @@
-これはマークダウンではないテストファイルです。
+This is not a markdown file.
