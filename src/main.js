@@ -157,7 +157,9 @@ function build() {
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://via.placeholder.com/400x225"
+                        src="https://picsum.photos/400/225?random=${Math.floor(
+                          Math.random() * 1000
+                        )}"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
@@ -192,20 +194,6 @@ function build() {
       <div class="container">
         <div class="header-content">
           <a href="#" class="site-logo">ReviewHub</a>
-          <nav class="main-nav">
-            <div class="nav-item">
-              <a href="#" class="nav-link active">ホーム</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">レビュー</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">比較</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">ニュース</a>
-            </div>
-          </nav>
           <div class="search-box">
             <input
               type="text"
@@ -217,25 +205,31 @@ function build() {
       </div>
     </header>
     <!-- ヒーローセクション -->
-    <section class="hero">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/1920/800?random=6'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; position: relative;">
       <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">信頼できる商品・サービス情報</h1>
-          <p class="hero-subtitle">
-            実際の体験に基づいたレビューと比較で、あなたの選択をサポート        
+        <div class="hero-content" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); text-align: center; max-width: 700px; margin: 0 auto; padding: 3rem 0;">
+          <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2;">あなたの最適な選択を<br><span style="color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">サポート</span></h1>
+          <p class="hero-subtitle" style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6; font-weight: 300;">
+            実際に体験したリアルなレビューと詳細な比較で<br>
+            あなたの大切な決断をお手伝いします
           </p>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">1,200+</span>
-              <span class="stat-label">レビュー記事</span>
+          <div style="margin-bottom: 1.5rem;">
+            <button style="background: linear-gradient(135deg, #00d4aa, #007991); border: none; color: white; padding: 0.8rem 2rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3); transition: all 0.3s ease; font-weight: 600;">
+              記事を探す
+            </button>
+          </div>
+          <div class="hero-stats" style="gap: 3rem; display: flex; justify-content: center; margin-top: 2rem;">
+            <div class="stat-item" style="text-align: center;">
+              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">50+</span>
+              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">厳選記事</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">対象商品</span>
+            <div class="stat-item" style="text-align: center;">
+              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">10+</span>
+              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">カテゴリー</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">10,000+</span>
-              <span class="stat-label">月間ユーザー</span>
+            <div class="stat-item" style="text-align: center;">
+              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">毎日</span>
+              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">更新中</span>
             </div>
           </div>
         </div>
@@ -259,48 +253,6 @@ function build() {
           </div>
           <!-- サイドバー -->
           <aside class="sidebar">
-            <!-- 人気記事ランキング -->
-            <div class="sidebar-widget">
-              <div class="widget-header">
-                <h3 class="widget-title">人気記事ランキング</h3>
-              </div>
-              <div class="widget-content">
-                <ul class="popular-list">
-                  <li class="popular-item">
-                    <div class="popular-rank gold">1</div>
-                    <div class="popular-content">
-                      <a href="#" class="popular-title">人気記事1</a>
-                      <div class="popular-meta">👁 5,240 | 📅 2025/07/13</div>   
-                    </div>
-                  </li>
-                  <li class="popular-item">
-                    <div class="popular-rank silver">2</div>
-                    <div class="popular-content">
-                      <a href="#" class="popular-title">人気記事2</a>
-                      <div class="popular-meta">👁 4,180 | 📅 2025/07/12</div>   
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- カテゴリー -->
-            <div class="sidebar-widget">
-              <div class="widget-header">
-                <h3 class="widget-title">カテゴリー</h3>
-              </div>
-              <div class="widget-content">
-                <div class="category-list">
-                  <a href="#" class="category-item">
-                    <span class="category-name">商品レビュー</span>
-                    <span class="category-count">156</span>
-                  </a>
-                  <a href="#" class="category-item">
-                    <span class="category-name">サービス比較</span>
-                    <span class="category-count">89</span>
-                  </a>
-                </div>
-              </div>
-            </div>
           </aside>
         </div>
       </div>
@@ -308,22 +260,6 @@ function build() {
     <!-- フッター -->
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>サイトについて</h3>
-            <ul class="footer-links">
-              <li><a href="#">運営方針</a></li>
-              <li><a href="#">プライバシーポリシー</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h3>コンテンツ</h3>
-            <ul class="footer-links">
-              <li><a href="#">最新記事</a></li>
-              <li><a href="#">人気記事</a></li>
-            </ul>
-          </div>
-        </div>
         <div class="footer-bottom">
           <p>&copy; 2025 ReviewHub. All rights reserved.</p>
         </div>
