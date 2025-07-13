@@ -23,10 +23,12 @@ npm run build
 ```
 
 ### ページビュー計測（Cloudflare Web Analytics）
-このプロジェクトは Cloudflare Web Analytics を利用してページビューを計測しています。  
-1. Cloudflare ダッシュボードでサイトを追加し **Site ID（token）** を取得  
-2. `src/main.js` 内の `"YOUR_SITE_ID"` を実際の token に置換  
-3. `npm run build` → `git push` 後、ダッシュボードの **Web Analytics > Overview** で PV を確認  
+
+このプロジェクトは Cloudflare Web Analytics を利用してページビューを計測しています。
+
+1. Cloudflare ダッシュボードでサイトを追加し **Site ID（token）** を取得
+2. `src/main.js` 内の `"YOUR_SITE_ID"` を実際の token に置換
+3. `npm run build` → `git push` 後、ダッシュボードの **Web Analytics > Overview** で PV を確認
 
 ### 3. サイトの確認
 
