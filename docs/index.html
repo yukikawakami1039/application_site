@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-    <title>記事一覧 - レビューサイト</title>
+    <title>記事一覧 - LensReview</title>
     <link rel="stylesheet" href="css/style.css" />
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"30cf6039280346649693ea9f201e6f43"}'></script>
 </head>
@@ -12,7 +12,9 @@
     <header class="site-header">
       <div class="container">
         <div class="header-content">
-          <a href="#" class="site-logo">ReviewHub</a>
+          <a href="#" class="site-logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1.8rem; color: #2c3e50; text-decoration: none; letter-spacing: -0.02em;">
+            <span style="color: #00d4aa;">Lens</span>Review
+          </a>
           <div class="search-box">
             <input
               type="text"
@@ -24,33 +26,17 @@
       </div>
     </header>
     <!-- ヒーローセクション -->
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/1920/800?random=6'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; position: relative;">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/800?random=6'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; position: relative; min-height: 80vh; display: flex; align-items: center;">
       <div class="container">
-        <div class="hero-content" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); text-align: center; max-width: 700px; margin: 0 auto; padding: 3rem 0;">
-          <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2;">あなたの最適な選択を<br><span style="color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">サポート</span></h1>
-          <p class="hero-subtitle" style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6; font-weight: 300;">
-            実際に体験したリアルなレビューと詳細な比較で<br>
-            あなたの大切な決断をお手伝いします
+        <div class="hero-content" style="color: white; text-align: center; max-width: 900px; margin: 0 auto; padding: 4rem 0;">
+          <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Helvetica Neue', Arial, sans-serif;">
+            Discover<br>
+            <span style="font-weight: 700; background: linear-gradient(135deg, #00d4aa, #00a3cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Authentic Reviews</span>
+          </h1>
+          <p class="hero-subtitle" style="font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin-bottom: 3rem; opacity: 0.9; line-height: 1.7; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.01em;">
+            実際の体験から生まれた信頼できるレビューで、<br>
+            あなたの最適な選択をサポートします
           </p>
-          <div style="margin-bottom: 1.5rem;">
-            <button style="background: linear-gradient(135deg, #00d4aa, #007991); border: none; color: white; padding: 0.8rem 2rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3); transition: all 0.3s ease; font-weight: 600;">
-              記事を探す
-            </button>
-          </div>
-          <div class="hero-stats" style="gap: 3rem; display: flex; justify-content: center; margin-top: 2rem;">
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">50+</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">厳選記事</span>
-            </div>
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">10+</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">カテゴリー</span>
-            </div>
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">毎日</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">更新中</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -68,19 +54,19 @@
               <div class="article-grid">
                 <article class="article-card">
                   <a
-                    href="articles/genshin-impact-guide.html"
+                    href="articles/chiken_golf.html"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://picsum.photos/400/225?random=439"
+                        src="https://picsum.photos/400/225?random=156"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
                       <span class="card-badge">記事</span>
                     </div>
                     <div class="card-content">
-                      <h3 class="card-title"></h3>
+                      <h3 class="card-title">【初心者歓迎】CHICKEN GOLF（チキンゴルフ）で “楽しく” スコアアップ！</h3>
                       <p class="card-excerpt">
                         記事の内容をご覧ください...
                       </p>
@@ -93,19 +79,19 @@
                 </article>
                 <article class="article-card">
                   <a
-                    href="articles/nyanko-senso.html"
+                    href="articles/kaikonhi.html"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://picsum.photos/400/225?random=530"
+                        src="https://picsum.photos/400/225?random=262"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
                       <span class="card-badge">記事</span>
                     </div>
                     <div class="card-content">
-                      <h3 class="card-title">にゃんこ大戦争攻略ガイド</h3>
+                      <h3 class="card-title">予算を気にせず“憧れ”を実現！</h3>
                       <p class="card-excerpt">
                         記事の内容をご覧ください...
                       </p>
@@ -118,19 +104,19 @@
                 </article>
                 <article class="article-card">
                   <a
-                    href="articles/test.html"
+                    href="articles/music_hearts.html"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://picsum.photos/400/225?random=16"
+                        src="https://picsum.photos/400/225?random=778"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
                       <span class="card-badge">記事</span>
                     </div>
                     <div class="card-content">
-                      <h3 class="card-title">テスト記事</h3>
+                      <h3 class="card-title">【Music Hearts】現役プロ直伝！“作曲×SNS×案件獲得” を12か月で身につける日本最高峰DTMオンラインスクール</h3>
                       <p class="card-excerpt">
                         記事の内容をご覧ください...
                       </p>
@@ -143,19 +129,19 @@
                 </article>
                 <article class="article-card">
                   <a
-                    href="articles/test1.html"
+                    href="articles/speak.html"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://picsum.photos/400/225?random=440"
+                        src="https://picsum.photos/400/225?random=962"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
                       <span class="card-badge">記事</span>
                     </div>
                     <div class="card-content">
-                      <h3 class="card-title">テスト記事 1</h3>
+                      <h3 class="card-title">【Speak】たった20分で100文アウトプット！TOEIC高得点なのに話せない悩みを一気に解消</h3>
                       <p class="card-excerpt">
                         記事の内容をご覧ください...
                       </p>
@@ -168,19 +154,19 @@
                 </article>
                 <article class="article-card">
                   <a
-                    href="articles/test2.html"
+                    href="articles/townlife.html"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="card-thumbnail">
                       <img
-                        src="https://picsum.photos/400/225?random=868"
+                        src="https://picsum.photos/400/225?random=456"
                         alt="記事のサムネイル"
                         class="card-image"
                       />
                       <span class="card-badge">記事</span>
                     </div>
                     <div class="card-content">
-                      <h3 class="card-title">テスト記事 2</h3>
+                      <h3 class="card-title">自宅にいながら“理想の住まい”を一気にプランニング</h3>
                       <p class="card-excerpt">
                         記事の内容をご覧ください...
                       </p>
@@ -204,7 +190,7 @@
     <footer class="site-footer">
       <div class="container">
         <div class="footer-bottom">
-          <p>&copy; 2025 ReviewHub. All rights reserved.</p>
+          <p>&copy; 2025 LensReview. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -48,28 +48,16 @@ function build() {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-    <title>${title} | ReviewHub</title>
+    <title>${title} | LensReview</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
         <div class="header-content">
-          <a href="../index.html" class="site-logo">ReviewHub</a>
-          <nav class="main-nav">
-            <div class="nav-item">
-              <a href="../index.html" class="nav-link">ホーム</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">レビュー</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">比較</a>
-            </div>
-            <div class="nav-item">
-              <a href="#" class="nav-link">ニュース</a>
-            </div>
-          </nav>
+          <a href="../index.html" class="site-logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1.8rem; color: #2c3e50; text-decoration: none; letter-spacing: -0.02em;">
+            <span style="color: #00d4aa;">Lens</span>Review
+          </a>
           <div class="search-box">
             <input
               type="text"
@@ -98,50 +86,14 @@ function build() {
             </article>
           </div>
           <aside class="sidebar">
-            <div class="sidebar-widget">
-              <div class="widget-header">
-                <h3 class="widget-title">人気記事</h3>
-              </div>
-              <div class="widget-content">
-                <ul class="popular-list">
-                  <li class="popular-item">
-                    <div class="popular-rank gold">1</div>
-                    <div class="popular-content">
-                      <a href="#" class="popular-title">最新攻略法</a>
-                      <div class="popular-meta">👁 5,240 | 📅 2025/07/13</div>
-                    </div>
-                  </li>
-                  <li class="popular-item">
-                    <div class="popular-rank silver">2</div>
-                    <div class="popular-content">
-                      <a href="#" class="popular-title">おすすめ情報</a>
-                      <div class="popular-meta">👁 4,180 | 📅 2025/07/12</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </aside>
         </div>
       </div>
     </main>
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>ReviewHub</h3>
-            <p>最新の情報とレビューをお届けします。</p>
-          </div>
-          <div class="footer-section">
-            <h3>サイト情報</h3>
-            <ul class="footer-links">
-              <li><a href="#">お問い合わせ</a></li>
-              <li><a href="#">プライバシーポリシー</a></li>
-            </ul>
-          </div>
-        </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 ReviewHub. All rights reserved.</p>
+          <p>&copy; 2025 LensReview. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -185,7 +137,7 @@ function build() {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-    <title>記事一覧 - レビューサイト</title>
+    <title>記事一覧 - LensReview</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -193,7 +145,9 @@ function build() {
     <header class="site-header">
       <div class="container">
         <div class="header-content">
-          <a href="#" class="site-logo">ReviewHub</a>
+          <a href="#" class="site-logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1.8rem; color: #2c3e50; text-decoration: none; letter-spacing: -0.02em;">
+            <span style="color: #00d4aa;">Lens</span>Review
+          </a>
           <div class="search-box">
             <input
               type="text"
@@ -205,33 +159,17 @@ function build() {
       </div>
     </header>
     <!-- ヒーローセクション -->
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/1920/800?random=6'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; position: relative;">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/800?random=6'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; position: relative; min-height: 80vh; display: flex; align-items: center;">
       <div class="container">
-        <div class="hero-content" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); text-align: center; max-width: 700px; margin: 0 auto; padding: 3rem 0;">
-          <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem; font-weight: 700; line-height: 1.2;">あなたの最適な選択を<br><span style="color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">サポート</span></h1>
-          <p class="hero-subtitle" style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; line-height: 1.6; font-weight: 300;">
-            実際に体験したリアルなレビューと詳細な比較で<br>
-            あなたの大切な決断をお手伝いします
+        <div class="hero-content" style="color: white; text-align: center; max-width: 900px; margin: 0 auto; padding: 4rem 0;">
+          <h1 class="hero-title" style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; font-weight: 300; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Helvetica Neue', Arial, sans-serif;">
+            Discover<br>
+            <span style="font-weight: 700; background: linear-gradient(135deg, #00d4aa, #00a3cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Authentic Reviews</span>
+          </h1>
+          <p class="hero-subtitle" style="font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin-bottom: 3rem; opacity: 0.9; line-height: 1.7; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.01em;">
+            実際の体験から生まれた信頼できるレビューで、<br>
+            あなたの最適な選択をサポートします
           </p>
-          <div style="margin-bottom: 1.5rem;">
-            <button style="background: linear-gradient(135deg, #00d4aa, #007991); border: none; color: white; padding: 0.8rem 2rem; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3); transition: all 0.3s ease; font-weight: 600;">
-              記事を探す
-            </button>
-          </div>
-          <div class="hero-stats" style="gap: 3rem; display: flex; justify-content: center; margin-top: 2rem;">
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">50+</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">厳選記事</span>
-            </div>
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">10+</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">カテゴリー</span>
-            </div>
-            <div class="stat-item" style="text-align: center;">
-              <span class="stat-number" style="font-size: 2.2rem; font-weight: bold; display: block; color: #00d4aa; text-shadow: 0 0 20px rgba(0, 212, 170, 0.3);">毎日</span>
-              <span class="stat-label" style="font-size: 1rem; margin-top: 0.3rem; opacity: 0.9;">更新中</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -261,7 +199,7 @@ function build() {
     <footer class="site-footer">
       <div class="container">
         <div class="footer-bottom">
-          <p>&copy; 2025 ReviewHub. All rights reserved.</p>
+          <p>&copy; 2025 LensReview. All rights reserved.</p>
         </div>
       </div>
     </footer>
