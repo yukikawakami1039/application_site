@@ -1,7 +1,25 @@
 const fs = require("fs");
 const path = require("path");
 const marked = require("marked");
-const { OUTPUT_ROOT, createOutputDirs, cleanBuild, getArticleFiles, readArticleFile } = require("./file-utils");
+const {
+  OUTPUT_ROOT,
+  createOutputDirs,
+  cleanBuild,
+  getArticleFiles,
+  readArticleFile,
+} = require("./file-utils");
+
+// Cloudflare Web Analytics beacon for PV tracking
+// TODO: Replace "YOUR_SITE_ID" with actual Cloudflare site token before deployment
+const BEACON =
+  '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" ' +
+  'data-cf-beacon=\'{"token":"30cf6039280346649693ea9f201e6f43"}\'></script>';
+
+function injectBeacon(html) {
+  return html.includes("static.cloudflareinsights")
+    ? html
+    : html.replace("</head>", `${BEACON}\n</head>`);
+}
 
 function writeHtmlFile(outputPath, content) {
   fs.writeFileSync(outputPath, content, "utf8");
@@ -34,34 +52,43 @@ function build() {
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="site-header">
       <div class="container">
         <div class="header-content">
-          <div class="logo">
-            <a href="../index.html">ReviewHub</a>
-          </div>
-          <nav class="nav">
-            <a href="../index.html" class="nav-link">ホーム</a>
-            <a href="#" class="nav-link">レビュー</a>
-            <a href="#" class="nav-link">比較</a>
-            <a href="#" class="nav-link">ニュース</a>
+          <a href="../index.html" class="site-logo">ReviewHub</a>
+          <nav class="main-nav">
+            <div class="nav-item">
+              <a href="../index.html" class="nav-link">ホーム</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">レビュー</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">比較</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link">ニュース</a>
+            </div>
           </nav>
           <div class="search-box">
-            <input type="text" placeholder="商品・サービスを検索..." />
-            <button type="submit">🔍</button>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="商品・サービスを検索..."
+            />
           </div>
         </div>
       </div>
     </header>
-    <main class="main">
+    <main class="main-content">
       <div class="container">
         <div class="content-wrapper">
-          <div class="main-content">
+          <div class="articles-section">
             <nav class="breadcrumb">
               <a href="../index.html">ホーム</a> > <span>記事</span> >
               <span>${title}</span>
             </nav>
-            <article class="article">
+            <article class="article-detail">
               <div class="article-header">
                 <h1 class="article-title">${title}</h1>
               </div>
@@ -71,39 +98,43 @@ function build() {
             </article>
           </div>
           <aside class="sidebar">
-            <div class="widget">
-              <h3 class="widget-title">人気記事</h3>
+            <div class="sidebar-widget">
+              <div class="widget-header">
+                <h3 class="widget-title">人気記事</h3>
+              </div>
               <div class="widget-content">
-                <a href="#" class="popular-item">
-                  <div class="popular-rank">1</div>
-                  <div class="popular-content">
-                    <h4>最新攻略法</h4>
-                    <p>初心者向けの詳細ガイド</p>
-                  </div>
-                </a>
-                <a href="#" class="popular-item">
-                  <div class="popular-rank">2</div>
-                  <div class="popular-content">
-                    <h4>おすすめ情報</h4>
-                    <p>効率的な方法を紹介</p>
-                  </div>
-                </a>
+                <ul class="popular-list">
+                  <li class="popular-item">
+                    <div class="popular-rank gold">1</div>
+                    <div class="popular-content">
+                      <a href="#" class="popular-title">最新攻略法</a>
+                      <div class="popular-meta">👁 5,240 | 📅 2025/07/13</div>
+                    </div>
+                  </li>
+                  <li class="popular-item">
+                    <div class="popular-rank silver">2</div>
+                    <div class="popular-content">
+                      <a href="#" class="popular-title">おすすめ情報</a>
+                      <div class="popular-meta">👁 4,180 | 📅 2025/07/12</div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </aside>
         </div>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="site-footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h4>ReviewHub</h4>
+            <h3>ReviewHub</h3>
             <p>最新の情報とレビューをお届けします。</p>
           </div>
           <div class="footer-section">
-            <h4>サイト情報</h4>
-            <ul>
+            <h3>サイト情報</h3>
+            <ul class="footer-links">
               <li><a href="#">お問い合わせ</a></li>
               <li><a href="#">プライバシーポリシー</a></li>
             </ul>
@@ -115,10 +146,9 @@ function build() {
       </div>
     </footer>
     <script src="../js/article-search.js"></script>
-  </body>
-</html>`;
+  </body>    </html>`;
 
-    writeHtmlFile(outputPath, articleHtml);
+    writeHtmlFile(outputPath, injectBeacon(articleHtml));
     articleLinks.push(
       `<article class="article-card">
                   <a
@@ -304,7 +334,10 @@ function build() {
   </body>
 </html>`;
 
-  writeHtmlFile(path.join(process.cwd(), OUTPUT_ROOT, "index.html"), indexHtml);
+  writeHtmlFile(
+    path.join(process.cwd(), OUTPUT_ROOT, "index.html"),
+    injectBeacon(indexHtml)
+  );
 }
 
 module.exports = {
