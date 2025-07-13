@@ -52,6 +52,8 @@
         4.  すべての記事のファイル名（＝HTMLへのリンク）をリスト化し、トップページ（`index.html`）のHTMLを生成する。
         5.  `writeHtmlFile()`で`docs/index.html`を保存する。
 
+    > **NOTE (2025-07-13):** 生成 HTML の `<head>` にはビルド時に Cloudflare Web Analytics の BEACON タグが自動挿入される。トークンは `src/main.js` の定数で設定する。
+
     #### 4. HTMLテンプレート設計
     *   **記事詳細ページ (`article.html`のテンプレート):**
         ```html
