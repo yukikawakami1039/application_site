@@ -11,6 +11,7 @@ describe("file-utils", () => {
       "articles/kaikonhi.md",
       "articles/music_hearts.md",
       "articles/speak.md",
+      "articles/tipstar.md",
       "articles/townlife.md",
     ];
 
