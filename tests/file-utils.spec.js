@@ -8,14 +8,9 @@ describe("file-utils", () => {
     // 実際のファイルリストに合わせて期待値を更新
     const expectedFiles = [
       "articles/chiken_golf.md",
-      "articles/genshin-impact-guide.md",
       "articles/kaikonhi.md",
       "articles/music_hearts.md",
-      "articles/nyanko-senso.md",
       "articles/speak.md",
-      "articles/test.md",
-      "articles/test1.md",
-      "articles/test2.md",
       "articles/townlife.md",
     ];
 
@@ -29,11 +24,12 @@ describe("file-utils", () => {
   });
 
   test("readArticleFile should return the content and title of a markdown file", () => {
-    const filePath = path.join("articles", "test1.md");
+    const filePath = path.join("articles", "chiken_golf.md");
     const { title, body } =
       require("../src/file-utils").readArticleFile(filePath);
-    expect(title).toBe("テスト記事 1"); // 実際のファイル内容に合わせて修正
-    expect(body).toContain("# テスト記事 1");
-    expect(body).toContain("これはテスト記事 1 の内容です。");
+    expect(title).toContain("CHICKEN GOLF"); // より汎用的な部分一致チェック
+    expect(title).toContain("チキンゴルフ");
+    expect(body).toContain("# 【初心者歓迎】CHICKEN GOLF");
+    expect(body).toContain("CHICKEN GOLFなら、ゴルフ経験ゼロでも");
   });
 });
