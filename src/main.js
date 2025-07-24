@@ -7,6 +7,7 @@ const {
   cleanBuild,
   getArticleFiles,
   readArticleFile,
+  copyAssets,
 } = require("./file-utils");
 
 // Cloudflare Web Analytics beacon for PV tracking
@@ -212,6 +213,11 @@ function build() {
     path.join(process.cwd(), OUTPUT_ROOT, "index.html"),
     injectBeacon(indexHtml)
   );
+
+  // Copy assets after HTML generation
+  copyAssets();
+  
+  console.debug('build complete');
 }
 
 module.exports = {
