@@ -18,6 +18,9 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!marked)/"
+    ],
+    "testPathIgnorePatterns": [
+      "/tests/__old__/"
     ]
   },
   "devDependencies": {

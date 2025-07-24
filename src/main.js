@@ -33,11 +33,11 @@ function build() {
 
   // Build articles
   const articleFiles = getArticleFiles();
-  const articleLinks = buildSection(articleFiles, 'articles');
+  const articleLinks = buildSection(articleFiles, "articles");
 
   // Build games
   const gameFiles = getGameFiles();
-  const gameLinks = buildSection(gameFiles, 'games');
+  const gameLinks = buildSection(gameFiles, "games");
 
   // Build main index page
   buildMainIndex(articleLinks, gameLinks);
@@ -50,15 +50,15 @@ function build() {
 
 function buildSection(files, sectionType) {
   const links = [];
-  
+
   if (files.length === 0) {
     // Build section index if it's games (even with empty list)
-    if (sectionType === 'games') {
+    if (sectionType === "games") {
       buildGamesIndex([]);
     }
     return [];
   }
-  
+
   files.forEach((filePath) => {
     const { title, body } = readArticleFile(filePath);
     const htmlContent = marked.parse(body);
@@ -72,13 +72,13 @@ function buildSection(files, sectionType) {
 
     const pageHtml = buildPageHtml(title, htmlContent, sectionType);
     writeHtmlFile(outputPath, injectBeacon(pageHtml));
-    
+
     const linkHtml = buildLinkHtml(title, fileName, sectionType);
     links.push(linkHtml);
   });
 
   // Build section index if it's games
-  if (sectionType === 'games') {
+  if (sectionType === "games") {
     buildGamesIndex(links);
   }
 
@@ -86,7 +86,7 @@ function buildSection(files, sectionType) {
 }
 
 function buildPageHtml(title, htmlContent, sectionType) {
-  const breadcrumbText = sectionType === 'games' ? 'ゲーム' : '記事';
+  const breadcrumbText = sectionType === "games" ? "ゲーム" : "記事";
   return `<!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -156,19 +156,24 @@ function buildLinkHtml(title, fileName, sectionType) {
                         src="https://picsum.photos/400/225?random=${Math.floor(
                           Math.random() * 1000
                         )}"
-                        alt="${sectionType === 'games' ? 'ゲーム' : '記事'}のサムネイル"
+                        alt="${
+                          sectionType === "games" ? "ゲーム" : "記事"
+                        }のサムネイル"
                         class="card-image"
                       />
-                      <span class="card-badge">${sectionType === 'games' ? 'ゲーム' : '記事'}</span>
+                      <span class="card-badge">${
+                        sectionType === "games" ? "ゲーム" : "記事"
+                      }</span>
                     </div>
                     <div class="card-content">
                       <h3 class="card-title">${title}</h3>
                       <p class="card-excerpt">
-                        ${sectionType === 'games' ? 'ゲーム' : '記事'}の内容をご覧ください...
+                        ${
+                          sectionType === "games" ? "ゲーム" : "記事"
+                        }の内容をご覧ください...
                       </p>
                       <div class="card-meta">
                         <div class="card-date">📅 2025/07/13</div>
-                        <div class="card-views">👁 1,230</div>
                       </div>
                     </div>
                   </a>
@@ -176,8 +181,13 @@ function buildLinkHtml(title, fileName, sectionType) {
 }
 
 function buildGamesIndex(gameLinks) {
-  const gamesIndexPath = path.join(process.cwd(), OUTPUT_ROOT, "games", "index.html");
-  
+  const gamesIndexPath = path.join(
+    process.cwd(),
+    OUTPUT_ROOT,
+    "games",
+    "index.html"
+  );
+
   const gamesIndexHtml = `<!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -234,7 +244,7 @@ function buildGamesIndex(gameLinks) {
     <script src="../js/article-search.js"></script>
   </body>
 </html>`;
-  
+
   writeHtmlFile(gamesIndexPath, injectBeacon(gamesIndexHtml));
 }
 
@@ -295,7 +305,9 @@ function buildMainIndex(articleLinks, gameLinks) {
                 ${articleLinks.join("\n                ")}
               </div>
             </section>
-            ${gameLinks.length > 0 ? `
+            ${
+              gameLinks.length > 0
+                ? `
             <section class="section">
               <div class="section-header">
                 <h2 class="section-title">ゲーム</h2>
@@ -304,7 +316,9 @@ function buildMainIndex(articleLinks, gameLinks) {
               <div class="article-grid">
                 ${gameLinks.join("\n                ")}
               </div>
-            </section>` : ''}
+            </section>`
+                : ""
+            }
           </div>
           <!-- サイドバー -->
           <aside class="sidebar">

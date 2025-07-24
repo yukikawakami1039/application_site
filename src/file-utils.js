@@ -7,7 +7,7 @@ function createOutputDirs() {
   const docsDir = path.join(process.cwd(), "docs");
   const docsArticlesDir = path.join(docsDir, "articles");
   const docsGamesDir = path.join(docsDir, "games");
-  
+
   if (!fs.existsSync(docsDir)) {
     fs.mkdirSync(docsDir, { recursive: true });
   }
@@ -40,16 +40,16 @@ function getArticleFiles() {
 
 function getGameFiles() {
   const gamesDir = path.join(process.cwd(), "games");
-  
+
   if (!fs.existsSync(gamesDir)) {
     return [];
   }
-  
+
   const files = fs.readdirSync(gamesDir);
   const gameFiles = files
     .filter((file) => file.endsWith(".md"))
     .map((file) => path.join("games", file));
-  
+
   return gameFiles;
 }
 
