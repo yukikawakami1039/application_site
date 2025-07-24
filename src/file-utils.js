@@ -6,18 +6,27 @@ const OUTPUT_ROOT = "docs";
 function createOutputDirs() {
   const docsDir = path.join(process.cwd(), "docs");
   const docsArticlesDir = path.join(docsDir, "articles");
+  const docsGamesDir = path.join(docsDir, "games");
+  
   if (!fs.existsSync(docsDir)) {
     fs.mkdirSync(docsDir, { recursive: true });
   }
   if (!fs.existsSync(docsArticlesDir)) {
     fs.mkdirSync(docsArticlesDir, { recursive: true });
   }
+  if (!fs.existsSync(docsGamesDir)) {
+    fs.mkdirSync(docsGamesDir, { recursive: true });
+  }
 }
 
 function cleanBuild() {
   const docsArticlesDir = path.join(process.cwd(), "docs", "articles");
+  const docsGamesDir = path.join(process.cwd(), "docs", "games");
   if (fs.existsSync(docsArticlesDir)) {
     fs.rmSync(docsArticlesDir, { recursive: true, force: true });
+  }
+  if (fs.existsSync(docsGamesDir)) {
+    fs.rmSync(docsGamesDir, { recursive: true, force: true });
   }
 }
 
@@ -27,6 +36,21 @@ function getArticleFiles() {
   return files
     .filter((file) => file.endsWith(".md"))
     .map((file) => path.join("articles", file));
+}
+
+function getGameFiles() {
+  const gamesDir = path.join(process.cwd(), "games");
+  
+  if (!fs.existsSync(gamesDir)) {
+    return [];
+  }
+  
+  const files = fs.readdirSync(gamesDir);
+  const gameFiles = files
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => path.join("games", file));
+  
+  return gameFiles;
 }
 
 function readArticleFile(filePath) {
@@ -58,17 +82,17 @@ function copyAssets() {
   const assetsDir = path.join(process.cwd(), "assets");
   const docsDir = path.join(process.cwd(), "docs");
 
-  console.debug('[copyAssets] Starting asset copy process');
-  console.debug('[copyAssets] Assets dir:', assetsDir);
-  console.debug('[copyAssets] Docs dir:', docsDir);
+  console.debug("[copyAssets] Starting asset copy process");
+  console.debug("[copyAssets] Assets dir:", assetsDir);
+  console.debug("[copyAssets] Docs dir:", docsDir);
 
   if (!fs.existsSync(assetsDir)) {
-    console.debug('[copyAssets] Assets directory does not exist, skipping');
+    console.debug("[copyAssets] Assets directory does not exist, skipping");
     return;
   }
 
   const files = fs.readdirSync(assetsDir);
-  console.debug('[copyAssets] Found files:', files);
+  console.debug("[copyAssets] Found files:", files);
 
   files.forEach((file) => {
     const sourcePath = path.join(assetsDir, file);
@@ -86,18 +110,18 @@ function copyAssets() {
         destPath = path.join(docsDir, file);
       }
 
-      console.debug('[copyAssets]', { srcPath: sourcePath, destPath });
+      console.debug("[copyAssets]", { srcPath: sourcePath, destPath });
 
       try {
         copyFileSync(sourcePath, destPath);
-        console.debug('[copyAssets] Successfully copied:', file);
+        console.debug("[copyAssets] Successfully copied:", file);
       } catch (error) {
-        console.error('[copyAssets] Error copying file:', file, error);
+        console.error("[copyAssets] Error copying file:", file, error);
       }
     }
   });
 
-  console.debug('[copyAssets] Asset copy process completed');
+  console.debug("[copyAssets] Asset copy process completed");
 }
 
 module.exports = {
@@ -105,6 +129,7 @@ module.exports = {
   createOutputDirs,
   cleanBuild,
   getArticleFiles,
+  getGameFiles,
   readArticleFile,
   copyFileSync,
   copyAssets,
